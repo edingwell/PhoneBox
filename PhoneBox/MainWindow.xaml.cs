@@ -13,16 +13,36 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PhoneBox.v1
+namespace PhoneBox
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        private PhoneBoxViewModel viewModel;
+
         public MainWindow()
         {
+            this.viewModel = new PhoneBoxViewModel();
+            this.DataContext = this.viewModel;
+
             InitializeComponent();
+        }
+
+        public void RefreshDevicesButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.viewModel.RefreshDevices();
+        }
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.viewModel.Start();
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.viewModel.Stop();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace PhoneBox.v1
+namespace PhoneBox
 {
     /// <summary>
     /// Interaction logic for App.xaml
